@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import type { Material } from "../../types";
-import { Shield, Zap, Weight } from "lucide-react";
+import { Shield, Weight } from "lucide-react";
 
 interface MaterialSpecsProps {
   materials: Material[];

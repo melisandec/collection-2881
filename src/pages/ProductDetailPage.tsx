@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Star, Zap, Shield, Users, ArrowRight } from "lucide-react";
+import { ArrowLeft, Star, ArrowRight } from "lucide-react";
 import { products } from "../data/products";
 import ColorSelector from "../components/products/ColorSelector";
 import MaterialSpecs from "../components/products/MaterialSpecs";
