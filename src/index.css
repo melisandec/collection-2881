@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: #f5f5dc;
+  background-color: #0a0a0a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Effet d'étoiles en arrière-plan */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at 20px 30px, #00bfff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #8a2be2, transparent),
+    radial-gradient(1px 1px at 90px 40px, #ff4500, transparent),
+    radial-gradient(1px 1px at 130px 80px, #32cd32, transparent),
+    radial-gradient(2px 2px at 160px 30px, #00ffff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 20s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes sparkle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+/* Styles pour les liens */
+a {
+  font-weight: 500;
+  color: #00bfff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+/* Styles pour les boutons sci-fi */
+.btn-sci-fi {
+  @apply relative px-6 py-3 font-orbitron font-semibold text-sm uppercase tracking-wider;
+  @apply bg-transparent border-2 border-electric-blue text-electric-blue;
+  @apply transition-all duration-300 ease-in-out;
+  @apply hover:bg-electric-blue hover:text-void-black;
+  @apply hover:shadow-lg hover:shadow-electric-blue/50;
+  @apply focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 focus:ring-offset-void-black;
+}
+
+.btn-sci-fi::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 191, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-sci-fi:hover::before {
+  left: 100%;
+}
+
+/* Styles pour les cartes produits */
+.product-card {
+  @apply relative bg-gradient-to-br from-void-black/80 to-comet-gray/20;
+  @apply border border-electric-blue/30 rounded-lg p-6;
+  @apply transition-all duration-300 ease-in-out;
+  @apply hover:border-electric-blue hover:shadow-lg hover:shadow-electric-blue/20;
+  @apply hover:transform hover:scale-105;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 191, 255, 0.05) 50%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+/* Styles pour les titres */
+.title-sci-fi {
+  @apply font-orbitron font-bold text-transparent bg-clip-text;
+  @apply bg-gradient-to-r from-electric-blue via-neon-cyan to-ultraviolet;
+  @apply animate-pulse-neon;
+}
+
+/* Styles pour les grilles néon */
+.neon-grid {
+  background-image: linear-gradient(rgba(0, 191, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 191, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00bfff, #8a2be2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ffff, #ff4500);
+}
+
+/* Animations d'entrée */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Effet de glow pour les éléments interactifs */
+.glow-effect {
+  @apply transition-all duration-300;
+  @apply hover:shadow-lg hover:shadow-electric-blue/50;
+  @apply hover:ring-1 hover:ring-electric-blue/50;
+}
+
+/* Classes pour les couleurs dynamiques */
+.color-electric-blue {
+  background-color: #00bfff;
+}
+
+.color-neon-cyan {
+  background-color: #00ffff;
+}
+
+.color-ultraviolet {
+  background-color: #8a2be2;
+}
+
+.color-nasa-orange {
+  background-color: #ff4500;
+}
+
+.color-uranus-acid {
+  background-color: #32cd32;
+}
+
+.color-comet-gray {
+  background-color: #708090;
+}
+
+.color-moon-dust {
+  background-color: #f5f5dc;
+}
+
+.color-star-powder {
+  background-color: #ffe4b5;
+}
+
+.color-vanta-black {
+  background-color: #000000;
+}
