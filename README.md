@@ -31,17 +31,20 @@ Une application web moderne présentant une collection de produits au design ré
 ## 🛠️ Installation
 
 1. Cloner le repository :
+
 ```bash
-git clone https://github.com/votre-username/collection-2881.git
+git clone https://github.com/melisandec/collection-2881.git
 cd collection-2881
 ```
 
 2. Installer les dépendances :
+
 ```bash
 npm install
 ```
 
 3. Lancer le serveur de développement :
+
 ```bash
 npm run dev
 ```
@@ -81,7 +84,7 @@ npm run build
 
 - **Creative Director** : Melisande Cornet
 - **Design** : Rétro-futuriste / Space Odyssey
-- **Année** : 2024
+- **Année** : 2025
 
 ## 📄 Licence
 
